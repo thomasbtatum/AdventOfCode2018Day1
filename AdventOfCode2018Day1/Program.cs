@@ -1045,12 +1045,24 @@ namespace AdventOfCode2018Day1
             int[] numbers = largeBuffer.Select(s => Convert.ToInt32(s)).ToArray();
 
             int count = 0;
-
+            var checkDup = new HashSet<int>();
+            checkDup.Add(0);
             foreach (var numb in numbers)
             {
                 count += numb;
-            }
 
+                if(checkDup.Contains(count))
+                {
+                    var l = checkDup.ToList();
+                    l.Sort();
+                    int y = 1;
+                }  else
+                {
+                    checkDup.Add(count);
+                }
+            }
+            var l1 = checkDup.ToList();
+            l1.Sort();
             int x = 1;
         }
     }
